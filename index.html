@@ -7,8 +7,8 @@
   <meta name="theme-color" content="#174bb8">
   <title>SemGroupTalker: Coarse-to-Fine Gaussian Motion with Semantic Initialization for Talking Head Synthesis under Unseen Audio</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23174bb8'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='white' font-family='Arial,sans-serif' font-size='19' font-weight='700'%3ES%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css?v=20260928">
-  <script src="player.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=keyframes20260928">
+  <script src="player.js?v=keyframes20260928" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -48,13 +48,14 @@
 
     <section class="section comparison-section" id="reconstruction" aria-labelledby="reconstruction-title">
       <div class="section-heading"><span class="section-number">02</span><h2 id="reconstruction-title">Reconstruction error comparison</h2></div>
-      <p class="section-description">Selected held-out clips from May, Lieu, and Shaheen show synchronized reconstructions alongside the ground truth. Mouth close-ups use the same crop, and error maps share one color scale across methods.</p>
+      <p class="section-description">Held-out clips show all six methods in one synchronized view. Five selected moments add ground-truth references, mouth close-ups, and reconstruction error maps on a shared color scale.</p>
       <figure class="video-figure">
-        <video id="reconstruction-video" controls playsinline preload="metadata" poster="assets/reconstruction-poster.jpg" aria-label="Synchronized reconstruction and mouth-region error comparison" aria-describedby="reconstruction-caption">
-          <source src="assets/reconstruction-comparison.mp4" type="video/mp4">
-          Your browser does not support embedded video. <a href="assets/reconstruction-comparison.mp4">Download the reconstruction comparison</a>.
+        <video id="reconstruction-video" controls playsinline preload="metadata" poster="assets/reconstruction-poster.jpg?v=keyframes20260928" aria-label="Synchronized reconstruction and mouth-region error comparison" aria-describedby="reconstruction-caption">
+          <source src="assets/reconstruction-comparison.mp4?v=keyframes20260928" type="video/mp4">
+          Your browser does not support embedded video. <a href="assets/reconstruction-comparison.mp4?v=keyframes20260928">Download the reconstruction comparison</a>.
         </video>
         <div class="playback-controls" data-video="reconstruction-video" hidden>
+          <button class="play-start" type="button" data-play-start>Play from start</button>
           <span id="reconstruction-speed-label" class="control-label">Playback speed</span>
           <div class="speed-buttons" role="group" aria-labelledby="reconstruction-speed-label">
             <button type="button" data-rate="0.25" aria-pressed="false">0.25×</button>
@@ -63,19 +64,27 @@
           </div>
           <span class="playback-hint">Slow down to inspect mouth motion.</span>
         </div>
-        <figcaption id="reconstruction-caption">SemGroupTalker (Ours), ER-NeRF, TalkingGaussian, GaussianTalker, InsTaG, and InsTaG++ appear together at matching time points. The ground truth provides the reference for the reconstruction error maps.</figcaption>
+        <p class="pause-note">At 1× speed, selected moments include 2-second pauses, with matching pauses in the audio.</p>
+        <div class="keyframe-controls" data-keyframes="assets/reconstruction-keyframes.json?v=keyframes20260928" hidden>
+          <div class="keyframe-heading"><span id="reconstruction-moments-label" class="control-label">Selected moments</span><span class="keyframe-hint">Choose a moment to pause and inspect.</span></div>
+          <div class="keyframe-buttons" role="group" aria-labelledby="reconstruction-moments-label"></div>
+          <p class="moment-caption" data-moment-caption aria-live="polite" hidden><strong data-moment-title></strong><span data-moment-description></span></p>
+        </div>
+        <p class="playback-status" data-playback-status role="status" hidden></p>
+        <figcaption id="reconstruction-caption">SemGroupTalker (Ours), ER-NeRF, TalkingGaussian, GaussianTalker, InsTaG, and InsTaG++ appear at matching time points. T1–T5 provide synchronized details during the selected pauses.</figcaption>
       </figure>
     </section>
 
     <section class="section comparison-section" id="unseen-audio" aria-labelledby="unseen-audio-title">
       <div class="section-heading"><span class="section-number">03</span><h2 id="unseen-audio-title">Unseen-audio (OOD) comparison</h2></div>
-      <p class="section-description">The same unseen speech drives all six methods in one synchronized view. Listen and compare lip closure, mouth opening, and their timing relative to the speech; use slow playback to inspect articulation.</p>
+      <p class="section-description">The same unseen speech drives all six methods. Four selected moments add mouth close-ups to inspect lip closure, mouth opening, and their timing relative to the speech.</p>
       <figure class="video-figure">
-        <video id="ood-video" controls playsinline preload="metadata" poster="assets/ood-poster.jpg" aria-label="Synchronized talking-head comparison under unseen driving audio" aria-describedby="ood-caption">
-          <source src="assets/ood-comparison.mp4" type="video/mp4">
-          Your browser does not support embedded video. <a href="assets/ood-comparison.mp4">Download the unseen-audio comparison</a>.
+        <video id="ood-video" controls playsinline preload="metadata" poster="assets/ood-poster.jpg?v=keyframes20260928" aria-label="Synchronized talking-head comparison under unseen driving audio" aria-describedby="ood-caption">
+          <source src="assets/ood-comparison.mp4?v=keyframes20260928" type="video/mp4">
+          Your browser does not support embedded video. <a href="assets/ood-comparison.mp4?v=keyframes20260928">Download the unseen-audio comparison</a>.
         </video>
         <div class="playback-controls" data-video="ood-video" hidden>
+          <button class="play-start" type="button" data-play-start>Play from start</button>
           <span id="ood-speed-label" class="control-label">Playback speed</span>
           <div class="speed-buttons" role="group" aria-labelledby="ood-speed-label">
             <button type="button" data-rate="0.25" aria-pressed="false">0.25×</button>
@@ -84,7 +93,14 @@
           </div>
           <span class="playback-hint">Play with sound to compare speech timing.</span>
         </div>
-        <figcaption id="ood-caption">SemGroupTalker (Ours), ER-NeRF, TalkingGaussian, GaussianTalker, InsTaG, and InsTaG++ share the same driving audio and playback timeline. InsTaG++ denotes InsTaG trained with the full target-identity training data.</figcaption>
+        <p class="pause-note">At 1× speed, selected moments include 2-second pauses, with matching pauses in the audio.</p>
+        <div class="keyframe-controls" data-keyframes="assets/ood-keyframes.json?v=keyframes20260928" hidden>
+          <div class="keyframe-heading"><span id="ood-moments-label" class="control-label">Selected moments</span><span class="keyframe-hint">Choose a moment to pause and inspect.</span></div>
+          <div class="keyframe-buttons" role="group" aria-labelledby="ood-moments-label"></div>
+          <p class="moment-caption" data-moment-caption aria-live="polite" hidden><strong data-moment-title></strong><span data-moment-description></span></p>
+        </div>
+        <p class="playback-status" data-playback-status role="status" hidden></p>
+        <figcaption id="ood-caption">SemGroupTalker (Ours), ER-NeRF, TalkingGaussian, GaussianTalker, InsTaG, and InsTaG++ share the same driving audio and playback timeline. T1–T4 provide mouth close-ups during the selected pauses. InsTaG++ uses the full target-identity training data.</figcaption>
       </figure>
     </section>
 
