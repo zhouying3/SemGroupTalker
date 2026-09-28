@@ -1,10 +1,10 @@
 # SemGroupTalker
 
-**Semantically Initialized Motion Groups for Gaussian Splatting**
+**SemGroupTalker: Coarse-to-Fine Gaussian Motion with Semantic Initialization for Talking Head Synthesis under Unseen Audio**
 
 Project page: https://zhouying3.github.io/SemGroupTalker/
 
-Academic project page for **Coarse-to-Fine Gaussian Motion with Semantic Initialization for Talking Head Synthesis under Unseen Audio**.
+Academic project page. The title, complete abstract, method overview and its caption, and downloadable paper are synchronized with the author-provided manuscript on September 28, 2026.
 
 The static project page has three content sections:
 

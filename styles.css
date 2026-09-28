@@ -57,6 +57,7 @@ figcaption { font-size: 1rem; line-height: 1.7; color: var(--muted); }
 .abstract { display: grid; grid-template-columns: 135px 1fr; gap: 2rem; padding-top: 2.5rem; }
 .abstract h3 { font-size: 1rem; line-height: 1.85; font-weight: 650; }
 .abstract p { font-size: 1rem; line-height: 1.85; color: #354257; }
+.abstract a { overflow-wrap: anywhere; }
 .section-description { color: var(--muted); font-size: 1rem; line-height: 1.8; max-width: 880px; margin: -.25rem 0 1.8rem; }
 .video-figure { border: 1px solid var(--line); border-radius: 10px; background: var(--soft); overflow: hidden; }
 video { display: block; width: 100%; height: auto; background: #101828; }

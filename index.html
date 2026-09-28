@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="SemGroupTalker: coarse-to-fine Gaussian motion with semantic initialization for talking head synthesis under unseen audio.">
   <meta name="theme-color" content="#174bb8">
-  <title>SemGroupTalker | Talking Head Synthesis under Unseen Audio</title>
+  <title>SemGroupTalker: Coarse-to-Fine Gaussian Motion with Semantic Initialization for Talking Head Synthesis under Unseen Audio</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23174bb8'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='white' font-family='Arial,sans-serif' font-size='19' font-weight='700'%3ES%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260928">
   <script src="player.js" defer></script>
 </head>
 <body>
@@ -25,11 +25,11 @@
     <div class="hero">
       <p class="eyebrow">AUDIO-DRIVEN 3D GAUSSIAN AVATARS</p>
       <h1 id="project-title">SemGroup<span>Talker</span></h1>
-      <p class="paper-title">Coarse-to-Fine Gaussian Motion with Semantic Initialization<br class="desktop-break"> for Talking Head Synthesis under Unseen Audio</p>
+      <p class="paper-title">SemGroupTalker: Coarse-to-Fine Gaussian Motion with Semantic Initialization<br class="desktop-break"> for Talking Head Synthesis under Unseen Audio</p>
       <p class="authors">Ying Zhou<sup>1,2</sup><span class="author-separator">·</span>ZhongYuan Zhao<sup>1,2</sup><span class="author-separator">·</span>Feng Gao<sup>1</sup></p>
       <p class="affiliations"><span><sup>1</sup> Peking University</span><span><sup>2</sup> Pengcheng Laboratory</span></p>
       <div class="hero-actions">
-        <a class="button primary" href="assets/paper.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7zM14 3v5h4M10 12h5M10 16h5"/></svg> Read the paper</a>
+        <a class="button primary" href="assets/paper.pdf?v=20260928" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7zM14 3v5h4M10 12h5M10 16h5"/></svg> Read the paper</a>
         <a class="button secondary" href="#reconstruction">Watch comparisons <span aria-hidden="true">↓</span></a>
       </div>
     </div>
@@ -37,12 +37,12 @@
     <section class="section overview" id="method" aria-labelledby="method-title">
       <div class="section-heading"><span class="section-number">01</span><h2 id="method-title">Method overview &amp; abstract</h2></div>
       <figure class="method-figure">
-        <a href="assets/method.png" target="_blank" rel="noopener" aria-label="Open full-resolution method overview"><img src="assets/method.png" alt="SemGroupTalker pipeline: facial parsing initializes soft Gaussian groups; audio-conditioned group motion is blended with per-Gaussian residuals before rendering." fetchpriority="high"></a>
-        <figcaption>Semantic initialization organizes shared group motion; per-Gaussian residuals refine local articulation.</figcaption>
+        <a href="assets/method.png?v=20260928" target="_blank" rel="noopener" aria-label="Open full-resolution method overview"><img src="assets/method.png?v=20260928" alt="SemGroupTalker pipeline: canonical Gaussian construction with semantic clues, structured audio-driven motion prediction, and rotation-aware rendering." width="2088" height="962" fetchpriority="high"></a>
+        <figcaption>Overview of SemGroupTalker. External parsing initializes Gaussian features and soft group weights. Audio-conditioned group codes provide shared deformation, and point-level residuals capture local corrections. The weights in “Soft Group Blending” are learned during early joint training. Group and residual codes update geometry and attributes before rendering.</figcaption>
       </figure>
       <div class="abstract">
         <h3>Abstract</h3>
-        <p>Audio-driven talking head models reconstruct appearance well but struggle with lip synchronization under unseen speech. Short training videos provide limited audio-motion coverage, while image supervision does not explicitly specify which Gaussians should share motion. FLAME-based approaches provide structure through mesh binding, but their audio-driven animation depends on the accuracy of intermediate facial-motion predictions. We propose a coarse-to-fine Gaussian motion representation with semantic initialization that directly incorporates motion sharing. Shared group motion encourages regional coordination, while per-Gaussian residuals preserve local articulation. External face parsing initializes soft group assignments, which are refined during early joint training with reconstruction and semantic supervision. These assignments organize shared motion while preserving differences among the lips, teeth, and mouth interior. Across four identities, our method achieves the best synchronization performance among the compared methods on two datasets. These gains on unseen audio are achieved while maintaining competitive self-reconstruction quality.</p>
+        <p>Identity specific audio-driven talking head models reconstruct appearance well but struggle with lip synchronization under unseen speech. Training on a single-speaker video leaves too much freedom in predicting how the Gaussians move. FLAME-based approaches provide structure through mesh binding, but their audio-driven animation depends on the accuracy of intermediate facial-motion predictions. We propose SemGroupTalker, a coarse-to-fine Gaussian motion representation with semantic initialization that directly incorporates motion sharing. Shared group motion encourages regional coordination, while per-Gaussian residuals preserve local articulation. External face parsing initializes soft group assignments, which are refined during early joint training with reconstruction and semantic supervision. These assignments organize shared motion while preserving differences among the lips, teeth, and mouth interior. Across four identities, our method achieves the best synchronization performance among the compared methods on two datasets. These gains on unseen audio are achieved while maintaining competitive self-reconstruction quality. The project page is available at <a href="https://zhouying3.github.io/SemGroupTalker/">https://zhouying3.github.io/SemGroupTalker/</a></p>
       </div>
     </section>
 
@@ -88,7 +88,7 @@
       </figure>
     </section>
 
-    <footer><a class="wordmark" href="#main">SemGroup<span>Talker</span></a><a href="assets/paper.pdf" target="_blank" rel="noopener">Read the paper <span aria-hidden="true">↗</span></a></footer>
+    <footer><a class="wordmark" href="#main">SemGroup<span>Talker</span></a><a href="assets/paper.pdf?v=20260928" target="_blank" rel="noopener">Read the paper <span aria-hidden="true">↗</span></a></footer>
   </main>
 </body>
 </html>
