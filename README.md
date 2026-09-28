@@ -9,14 +9,12 @@ Academic project page. The title, complete abstract, method overview and its cap
 The static project page has three content sections:
 
 1. Method overview and the paper abstract.
-2. One synchronized reconstruction comparison video. Five selected moments (T1–T5) add ground-truth references, mouth close-ups, and reconstruction error maps on a common color scale.
-3. One synchronized unseen-audio comparison video. Four selected moments (T1–T4) add mouth close-ups for inspecting articulation and speech timing.
+2. One synchronized reconstruction comparison video with ground-truth references, mouth close-ups, and error maps on a shared color scale.
+3. One synchronized unseen-audio comparison video for comparing articulation and speech timing under the same driving audio.
 
-Both videos show SemGroupTalker (Ours) together with all five comparison methods: ER-NeRF, TalkingGaussian, GaussianTalker, InsTaG, and InsTaG++. Each player has native video controls and 0.25×, 0.5×, and 1× playback options. Playback starts only when the visitor chooses to play. The paper PDF remains linked from the page.
+Both videos show SemGroupTalker (Ours) together with all five comparison methods: ER-NeRF, TalkingGaussian, GaussianTalker, InsTaG, and InsTaG++. Face views retain fixed positions and a consistent size, with method labels kept in place. Reference and mouth details are presented alongside these views.
 
-The two videos include encoded 2-second freeze frames and synchronized audio pauses at the selected moments. This duration is measured at 1× speed; slower playback also lengthens the pauses. JavaScript does not insert additional pauses. The ordinary video frames prioritize the six method views, while the encoded freeze frames provide the local explanations.
-
-Each player loads its own optional keyframe metadata and renders a button for each selected moment. Clicking a moment pauses the player, seeks to `holdStart + 0.2` after metadata is available, confirms the seek, and shows that moment's description. `Play from start` starts the complete video from the beginning at the selected playback speed. Keyframe IDs are scoped to each player, so T1 in one video cannot control the other video. Native playback and speed controls remain usable when keyframe metadata cannot be loaded.
+Each player provides native video controls, `Play from start`, and 0.25×, 0.5×, and 1× playback options. `Play from start` begins the full video at the current playback speed. Playback begins only when the visitor chooses to play. The paper PDF remains linked from the page.
 
 ## Page assets
 
@@ -24,14 +22,10 @@ Each player loads its own optional keyframe metadata and renders a button for ea
 - `assets/paper.pdf`
 - `assets/reconstruction-comparison.mp4`
 - `assets/reconstruction-poster.jpg`
-- `assets/reconstruction-keyframes.json`
 - `assets/ood-comparison.mp4`
 - `assets/ood-poster.jpg`
-- `assets/ood-keyframes.json`
 
-Each keyframe JSON file is an array of objects containing `id`, `title`, `description`, `sourceTime`, `videoTime`, `holdStart`, `holdEnd`, and `identity`. Times are in seconds; `sourceTime` is relative to the original clip, and `holdStart`/`holdEnd` identify the freeze frame in the rendered video's timeline. Metadata is rendered as plain text. The selected moment buttons remain hidden until valid metadata is available.
-
-Video, poster, keyframe JSON, CSS, and player-script URLs use `?v=keyframes20260928` to refresh cached assets. The manuscript section retains its existing `?v=20260928` references.
+Video, poster, CSS, and player-script URLs use `?v=stable20260928` to refresh cached assets. The manuscript section retains its existing `?v=20260928` references.
 
 Publish `index.html`, `styles.css`, `player.js`, and the page assets from the repository root using GitHub Pages.
 

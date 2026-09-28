@@ -66,18 +66,10 @@ video { display: block; width: 100%; height: auto; background: #101828; }
 .control-label { color: var(--ink); font-weight: 550; }
 .playback-hint { margin-left: auto; color: var(--muted); }
 .speed-buttons { display: flex; gap: .4rem; }
-.speed-buttons button, .play-start, .keyframe-buttons button { min-height: 42px; min-width: 58px; padding: .5rem .8rem; font-size: .875rem; line-height: 1.5; border: 1px solid #cbd6e8; border-radius: 6px; background: white; color: var(--ink); cursor: pointer; font-variant-numeric: tabular-nums; }
-.speed-buttons button:hover, .play-start:hover, .keyframe-buttons button:hover { background: var(--soft); }
-.speed-buttons button[aria-pressed="true"], .keyframe-buttons button[aria-pressed="true"] { background: var(--blue); border-color: var(--blue); color: white; }
+.speed-buttons button, .play-start { min-height: 42px; min-width: 58px; padding: .5rem .8rem; font-size: .875rem; line-height: 1.5; border: 1px solid #cbd6e8; border-radius: 6px; background: white; color: var(--ink); cursor: pointer; font-variant-numeric: tabular-nums; }
+.speed-buttons button:hover, .play-start:hover { background: var(--soft); }
+.speed-buttons button[aria-pressed="true"] { background: var(--blue); border-color: var(--blue); color: white; }
 .play-start { font-weight: 600; }
-.pause-note { padding: .75rem 1.25rem; background: white; font-size: .875rem; line-height: 1.65; color: var(--muted); }
-.keyframe-controls { padding: .3rem 1.25rem 1.15rem; background: white; border-bottom: 1px solid var(--line); }
-.keyframe-heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem .8rem; margin-bottom: .65rem; }
-.keyframe-hint { font-size: .875rem; line-height: 1.6; color: var(--muted); }
-.keyframe-buttons { display: flex; flex-wrap: wrap; gap: .5rem; }
-.moment-caption { padding: .85rem 1rem; margin-top: .85rem; border-left: 3px solid var(--blue); background: var(--soft); font-size: 1rem; line-height: 1.7; color: var(--muted); overflow-wrap: anywhere; }
-.moment-caption strong { display: block; color: var(--ink); font-weight: 600; margin-bottom: .2rem; }
-.moment-caption span { display: block; }
 .playback-status { padding: .85rem 1.25rem 0; color: var(--muted); font-size: .875rem; line-height: 1.6; }
 .video-figure figcaption { padding: 1rem 1.25rem 1.15rem; }
 footer { border-top: 1px solid var(--line); padding: 1.7rem 0 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
@@ -117,10 +109,6 @@ footer > a:last-child { font-size: .875rem; white-space: nowrap; }
   .playback-controls { padding: .8rem; gap: .6rem .8rem; }
   .playback-hint { width: 100%; }
   .play-start { margin-right: auto; }
-  .pause-note { padding: .75rem .8rem; }
-  .keyframe-controls { padding: .25rem .8rem 1rem; }
-  .keyframe-buttons { gap: .4rem; }
-  .moment-caption { padding: .75rem .8rem; }
   .playback-status { padding: .75rem .8rem 0; }
   .video-figure figcaption { padding: .9rem .8rem 1rem; }
   footer { gap: .7rem; flex-wrap: wrap; }
@@ -130,7 +118,7 @@ footer > a:last-child { font-size: .875rem; white-space: nowrap; }
   .button { transition: none; }
 }
 @media print {
-  nav, .hero-actions, .playback-controls, .keyframe-controls, .playback-status, .skip-link { display: none; }
+  nav, .hero-actions, .playback-controls, .playback-status, .skip-link { display: none; }
   .site-header, main { margin: 0; }
   .hero { padding: 1.5rem 0; }
   .section { padding: 1.5rem 0; }
